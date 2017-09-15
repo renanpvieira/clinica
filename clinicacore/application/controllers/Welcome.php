@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Welcome extends CI_Controller {
+class Welcome extends MY_Controller {
 
         public function __construct()
         {
@@ -11,9 +11,9 @@ class Welcome extends CI_Controller {
     
 	public function index()
 	{
-            $dados['menu'] = $this->menu->menuEmpresa(1);
+            //$dados['menu'] = $this->menu->menuEmpresa(1);
             //var_dump($res);
             echo CLINICAID;
-            $this->load->view('welcome_message', $dados);
+            $this->displaySite('welcome_message');
 	}
 }

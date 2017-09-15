@@ -56,11 +56,14 @@
 
 define('ENVIRONMENT', isset($_SERVER['CI_ENV']) ? $_SERVER['CI_ENV'] : 'development');
 
-if(!defined('CLINICAID')){
+if(!defined('CLINICAID') || !defined('VIEWFOLDER')){
    header('HTTP/1.1 503 Service Unavailable.', TRUE, 503);
    echo 'Houve um erro! Tente mais tarde!';
    exit(3); // EXIT_CONFIG
 }
+
+
+
 
 /*
  *---------------------------------------------------------------
@@ -136,7 +139,10 @@ switch (ENVIRONMENT)
  *
  * NO TRAILING SLASH!
  */
-	$view_folder = '';
+        
+        
+	$view_folder = '../viewgeral';
+        
 
 
 /*
