@@ -13,7 +13,7 @@ class Welcome extends MY_Controller {
 	{
             //$dados['menu'] = $this->menu->menuEmpresa(1);
             //var_dump($res);
-            echo CLINICAID;
+            //echo CLINICAID;
             $this->displaySite('welcome_message');
 	}
 }

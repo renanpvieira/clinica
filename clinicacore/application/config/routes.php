@@ -55,4 +55,4 @@ $route['translate_uri_dashes'] = FALSE;
 
 
 $route['admin'] = 'admin/home';
-//$route['admin/(:any)'] = 'admin/authenticate/$1';
+//$route['admin/(:any)'] = 'admin/$1';

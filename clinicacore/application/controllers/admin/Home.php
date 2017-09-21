@@ -7,11 +7,19 @@ class Home extends MY_Controller {
         {
                parent::__construct();
                $this->paginaSegura();
+               
+               
         }	
     
 	public function index()
 	{
-            echo 'Home admin';
+           $this->displayAdmin('home');
+         }
+        
+        
+        public function sair(){
+           $this->deslogar();
+           redirect('admin/home');
         }
         
         

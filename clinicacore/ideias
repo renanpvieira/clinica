@@ -1,2 +1,5 @@
 quando o usuario digitar www.clinica.com/admin vai ser redirecionado para o projeto de admin, isso para nao ter uma pasta de view
 
+
+talvez tenha que criar uma defined para colocar na base url quando o site for para o ar
+

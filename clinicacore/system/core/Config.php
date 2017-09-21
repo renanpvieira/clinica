@@ -290,6 +290,90 @@ class CI_Config {
 	}
 
 	// -------------------------------------------------------------
+        
+        
+         public function img_url($uri = '', $protocol = NULL)
+	{
+		$base_url = $this->slash_item('img_url');
+
+		if (isset($protocol))
+		{
+			// For protocol-relative links
+			if ($protocol === '')
+			{
+				$base_url = substr($base_url, strpos($base_url, '//'));
+			}
+			else
+			{
+				$base_url = $protocol.substr($base_url, strpos($base_url, '://'));
+			}
+		}
+
+		return $base_url.$this->_uri_string($uri);
+	}
+        
+        
+        public function nativos_js_url($uri = '', $protocol = NULL)
+	{
+		$base_url = $this->slash_item('nativos_js_url');
+
+		if (isset($protocol))
+		{
+			// For protocol-relative links
+			if ($protocol === '')
+			{
+				$base_url = substr($base_url, strpos($base_url, '//'));
+			}
+			else
+			{
+				$base_url = $protocol.substr($base_url, strpos($base_url, '://'));
+			}
+		}
+
+		return $base_url.$this->_uri_string($uri);
+	}
+        
+        public function nativos_css_url($uri = '', $protocol = NULL)
+	{
+		$base_url = $this->slash_item('nativos_css_url');
+
+		if (isset($protocol))
+		{
+			// For protocol-relative links
+			if ($protocol === '')
+			{
+				$base_url = substr($base_url, strpos($base_url, '//'));
+			}
+			else
+			{
+				$base_url = $protocol.substr($base_url, strpos($base_url, '://'));
+			}
+		}
+
+		return $base_url.$this->_uri_string($uri);
+	}
+        
+        
+        public function terceiros_url($uri = '', $protocol = NULL)
+	{
+		$base_url = $this->slash_item('terceiros_url');
+
+		if (isset($protocol))
+		{
+			// For protocol-relative links
+			if ($protocol === '')
+			{
+				$base_url = substr($base_url, strpos($base_url, '//'));
+			}
+			else
+			{
+				$base_url = $protocol.substr($base_url, strpos($base_url, '://'));
+			}
+		}
+
+		return $base_url.$this->_uri_string($uri);
+	}
+        
 
 	/**
 	 * Base URL

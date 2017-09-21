@@ -9,18 +9,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Gentelella Alela! | </title>
-
-    <!-- Bootstrap -->
-    <link href="../../../viewgeral/assets/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome -->
-    <link href="../../../viewgeral/assets/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-    <!-- NProgress -->
-     <link href="../../../viewgeral/assets/vendors/nprogress/nprogress.css" rel="stylesheet">
-    <!-- Animate.css -->
-     <link href="../../../viewgeral/assets/vendors/animate.css/animate.min.css" rel="stylesheet">
-
-    <!-- Custom Theme Style -->
-    <link href="../../../viewgeral/assets/build/css/custom.min.css" rel="stylesheet">
+   
+    <link href="<?php echo terceiros_url('vendors/bootstrap/dist/css/bootstrap.min.css'); ?>" rel="stylesheet">
+    <link href="<?php echo terceiros_url('vendors/font-awesome/css/font-awesome.min.css'); ?>" rel="stylesheet">
+    <link href="<?php echo terceiros_url('vendors/nprogress/nprogress.css'); ?>" rel="stylesheet">
+    <link href="<?php echo terceiros_url('vendors/animate.css/animate.min.css'); ?>" rel="stylesheet">
+    <link href="<?php echo terceiros_url('build/css/custom.min.css'); ?>" rel="stylesheet">
+    <style>
+        
+        
+    </style>
   </head>
 
   <body class="login">
@@ -31,20 +29,31 @@
       <div class="login_wrapper">
         <div class="animate form login_form">
           <section class="login_content">
-            <form>
+              <form name="form-login" action="post">
               <h1>Login</h1>
               <div>
-                <input type="text" class="form-control" placeholder="Login" required="" />
+                 <img src="<?php echo img_url('logo/' . $empresa['Logo']); ?>" width="80" >
               </div>
-              <div>
-                <input type="password" class="form-control" placeholder="Senha" required="" />
-              </div>
-              <a class="reset_pass" href="#">Esqueci minha senha</a>
               <br />
+              <div>
+                <input type="text" name='Login' class="form-control" placeholder="Login" required="" />
+              </div>
+              
               
               <div>
-                <a class="btn btn-default submit" href="index.html">Entrar</a>
+                  <input type="password" name="Senha" class="form-control" placeholder="Senha" required="" />
               </div>
+              <a class="reset_pass" href="<?php echo site_url('admin/nova'); ?>">Esqueci minha senha</a>
+              
+              
+              
+              <div class="btn-logar">
+                <input class="btn btn-default submit" type="submit" value="Entrar" />
+              </div>
+              <br /><br /><br />
+              <div id="login-msg"></div>
+              
+
 
               <div class="clearfix"></div>
               <br />
@@ -66,5 +75,24 @@
         
       </div>
     </div>
+    
+    <script  src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script  src="<?php echo nativos_js_url('script.js'); ?>" ></script>
+    
+    <script>
+         function GeraSecurityForm(form){
+             form[form.length] = { name: "<?php echo $this->security->get_csrf_token_name() ;?>", value: getCookie("<?php echo $this->security->get_csrf_cookie_name() ;?>") };
+             return form;
+         }
+                  
+         function Site_Url(url){  return '<?php echo site_url(); ?>' + url; }
+         function Base_Url(url){  return '<?php echo base_url(); ?>' + url; }
+    </script>
+    
+    
+    <script  src="<?php echo nativos_js_url('login.js'); ?>" ></script>
+     
+
+      
   </body>
 </html>

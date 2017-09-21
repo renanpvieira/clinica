@@ -49,6 +49,34 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 // ------------------------------------------------------------------------
 
+if ( ! function_exists('terceiros_url')){
+    function terceiros_url($uri = '', $protocol = NULL){
+	return get_instance()->config->terceiros_url($uri, $protocol);
+    }
+}
+
+if ( ! function_exists('nativos_js_url')){
+    function nativos_js_url($uri = '', $protocol = NULL){
+	return get_instance()->config->nativos_js_url($uri, $protocol);
+    }
+}
+
+
+if ( ! function_exists('nativos_css_url')){
+    function nativos_css_url($uri = '', $protocol = NULL){
+	return get_instance()->config->nativos_css_url($uri, $protocol);
+    }
+}
+
+
+
+if ( ! function_exists('img_url')){
+    function img_url($uri = '', $protocol = NULL){
+	return get_instance()->config->img_url($uri, $protocol);
+    }
+}
+
+
 if ( ! function_exists('site_url'))
 {
 	/**
