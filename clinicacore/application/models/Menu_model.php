@@ -9,7 +9,7 @@ class Menu_model extends CI_Model {
     }
     
     public function menuEmpresa(){
-        $this->db->select('Label, Url');
+        $this->db->select('Label, UrlAdmin, Icone');
         $this->db->from('menu_empresa');
         $this->db->join('menu', 'menu_empresa.MenuId = menu.MenuId');
         $this->db->where('menu_empresa.EmpresaId', EMPRESAID);

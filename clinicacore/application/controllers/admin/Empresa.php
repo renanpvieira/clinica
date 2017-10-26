@@ -11,7 +11,7 @@ class Empresa extends MY_Controller {
     
 	public function index()
 	{
-            echo 'Empresa admin';
+           $this->displayAdmin('empresa');
         }
         
         

@@ -76,7 +76,8 @@
       </div>
     </div>
     
-    <script  src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+<!--    <script  src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>-->
+      <script src="<?php echo terceiros_url('jquery.min.js'); ?>"></script>
     <script  src="<?php echo nativos_js_url('script.js'); ?>" ></script>
     
     <script>

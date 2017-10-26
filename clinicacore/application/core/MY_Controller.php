@@ -15,6 +15,7 @@ class MY_Controller extends CI_Controller {
             $this->login_url = site_url('admin/login');
             
             $this->load->model('Menu_model', 'menu');
+            $this->load->model('Idioma_model', 'idioma');
             $this->load->model('Empresa_model', 'empresa');
             $this->load->model('Alerta_model', 'alerta');
         }
@@ -46,10 +47,11 @@ class MY_Controller extends CI_Controller {
         public function displayAdmin($view)
         {
             
-            /* DADOS DEFAUL ADMIN */
+            /* DADOS DEFAULT ADMIN */
             $this->SetDados('nomeusuario', $this->getUsuarioNome());
             $this->SetDados('menu', $this->menu->menuEmpresa());
             $this->SetDados('alertas', $this->alerta->AlertasNaoVistos());
+            $this->SetDados('idiomas', $this->idioma->idiomaEmpresa());
             
             //var_dump($this->dados);
             //exit();

@@ -54,19 +54,28 @@
               <div class="menu_section">
                 <h3>Menu</h3>
                 <ul class="nav side-menu">
-                  <li><a><i class="fa fa-edit"></i>Empresa</a></li>
-                  <li><a><i class="fa fa-map-marker"></i>Localização</a></li>
-                  <li><a><i class="fa fa-phone"></i>Contatos</a></li>
-                  <li><a><i class="fa fa-user-md"></i>Serviços</a></li>
-                  <li><a><i class="fa fa-home"></i>Instalações</a></li>
-                  <li><a><i class="fa fa-user-md"></i>Profissionais</a></li>
-                  <li><a><i class="fa fa-plus-square"></i>Planos de Saúde</a></li>
-                  <li><a><i class="fa fa-photo"></i>Álbum de Fotos</a></li>
-                  <li><a><i class="fa fa-bullhorn"></i>Notícias</a></li>
+                    <?php
+                       foreach ($menu as $m) {
+                            echo '<li><a href="' . site_url($m['UrlAdmin']) . '"><i class="' . $m['Icone'] . '"></i>' . $m['Label'] . '</a></li>';
+                        }
+                    ?>
+                   
+                    
+                  <!--  
+                     <li><a href="<?php /* echo site_url('admin/empresa');*/ ?>"><i class="fa fa-edit"></i>Empresa</a></li>
+                     <li><a><i class="fa fa-map-marker"></i>Localização</a></li>
+                     <li><a><i class="fa fa-phone"></i>Contatos</a></li>
+                     <li><a><i class="fa fa-user-md"></i>Serviços</a></li>
+                     <li><a><i class="fa fa-home"></i>Instalações</a></li>
+                     <li><a><i class="fa fa-user-md"></i>Profissionais</a></li>
+                     <li><a><i class="fa fa-plus-square"></i>Planos de Saúde</a></li>
+                     <li><a><i class="fa fa-photo"></i>Álbum de Fotos</a></li>
+                     <li><a><i class="fa fa-bullhorn"></i>Notícias</a></li>
                   <li><a><i class="fa fa-bell"></i>Dicas</a></li>
                   <li><a><i class="fa fa-bell"></i>Banners</a></li>
                   <li><a><i class="fa fa-comments-o"></i>Mensagens Recebidas</a></li>
                   <li><a><i class="fa fa-file-excel-o"></i>Currículos Recebidas</a></li>
+                  -->
                 </ul>
               </div>
             </div>
